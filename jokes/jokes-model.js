@@ -14,9 +14,9 @@ function findBy(filter) {
     return db('users').where(filter)
 }
 async function add(user) {
-    console.log('user in colsolejokes mdel:',user)
+    console.log('user in colsolejokes m0deel:',user)
     const [id] = await db('users').insert(user)
-    console.log('id in colsolejokes mdel:',id)
+    console.log('id in colsole jokes m0del:',id)
     return findById(id)
 }
 function findById(id) {

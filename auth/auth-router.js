@@ -12,10 +12,10 @@ router.post('/register', (req, res) => {
 
   Jokes.add(user)
     .then( user => {
-      console.log('user inside add .then:', user)
+      // console.log('user inside add .then:', user)
       res.status(201).json(user)
     }).catch(err =>{
-      console.log('err inside authrouter:', err)
+      // console.log('err inside authrouter:', err)
       res.status(400).json(err)
     })
 });
@@ -28,12 +28,12 @@ router.post('/login', (req, res) => {
   Jokes.findBy({username})
   .first()
   .then((user) => {
-    console.log('userin the .then:',user)
+    // console.log('userin the .then:',user)
     if( user && bcryptjs.compareSync(password,user.password)){
-      console.log('madeitdown herre1')
+      // console.log('madeitdown herre1')
       const token = generateToken(user);
-      console.log('madeitdown herre2')
-      res.status(200).json({
+      // console.log('madeitdown herre2')
+      res.status(201).json({
         message:`welcome ${user.username}`,
         token
       })
@@ -46,18 +46,18 @@ router.post('/login', (req, res) => {
 });
 
 function generateToken(user) {
-  console.log('made it to the tokengenerater')
+  // console.log('made it to the tokengenerater')
   const payload = {
     
     subject: user.id,
     username: user.username,
     time:Date.now()
   }
-  console.log('made it to the tokengenerater1')
+  // console.log('made it to the tokengenerater1')
   const options = {
     expiresIn: '1h'
   }
-  console.log('made it to the tokengenerater2')
+  // console.log('made it to the tokengenerater2')
   return jwt.sign(payload,jwtSecret,options)
 }
 
