@@ -28,9 +28,15 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 2. What does `bcrypt` do to help us store passwords in a secure manner.
 
+it has the function that enables you to hash paswords so they arent saved in plain text
+
 3. How are unit tests different from integration and end-to-end testing.
 
+unit tests test small parts of your code like a button click or adding in a text field, integration and end to end test that everything on the page does as its supposed to
+
 4. How _Test Driven Development_ changes the way we write applications and tests.
+
+when thinking about how to test your code while you write it it oviously makes it easier to test, which typically means cleaner, and easier to test means easier to modify or debug
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
